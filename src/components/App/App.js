@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import { Route, Switch } from 'react-router-dom'
+import './App.scss'
+import Search from '../Search/Search'
+import Artist from '../Artist/Artist'
+import AlbumList from '../AlbumList/AlbumList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const API_KEY = '195003';
+  
+export default class App extends Component {
+
+  state = {
+    error: undefined,
+    loading: false,
+    apiData: undefined
+  }
+    
+  getInfo = async (e) => {
+    e.preventDefault()
+      
+    this.setState({
+      loading: true,
+      error: undefined,
+      apiData: undefined
+    })
+  
+    let search = e.target.elements.search.value
+  
+    const api = await fetch(`https://theaudiodb.com/api/v1/json/${API_KEY}/search.php?s=${search}`)
+    const result = await api.json()
+    console.log(result)
+
+     if (result === '404') {
+        this.setState({
+          apiData: undefined
+        })
+      } else if (search) {
+    
+        this.setState({
+          apiData: result,
+        }) 
+      }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Search
+          getInfo={this.getInfo}
+        />
+        {this.state.apiData && 
+          <Artist
+            apiData={this.state.apiData}
+          />
+        }
+        <Route
+          path={`/${apiData.artists[0].strArtist}`}
+          component={AlbumList}
+          apiData={this.state.apiData}
+        />
+      </div>
+    )
+  }
 }
-
-export default App;
