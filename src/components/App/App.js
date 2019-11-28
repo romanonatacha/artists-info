@@ -41,6 +41,13 @@ export default class App extends Component {
           apiData: result,
         }) 
       }
+
+      if (this.state.apiData) {
+        this.setState({
+          apiData: result,
+          loading: false
+        }) 
+      }
   }
 
   render() {
@@ -49,16 +56,22 @@ export default class App extends Component {
         <Search
           getInfo={this.getInfo}
         />
-        {this.state.apiData && 
-          <Artist
+            <Switch>
+          <Route exact path="/">
+            {this.state.apiData && 
+            <Artist
+              apiData={this.state.apiData}
+              loading={this.state.loading}
+            />
+            }
+          </Route>
+    
+          <Route
+            path={`/:id`}
+            children={<AlbumList/>}
             apiData={this.state.apiData}
           />
-        }
-        <Route
-          path={`/${apiData.artists[0].strArtist}`}
-          component={AlbumList}
-          apiData={this.state.apiData}
-        />
+        </Switch>
       </div>
     )
   }
