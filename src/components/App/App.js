@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import './App.scss'
 import Search from '../Search/Search'
-import Artist from '../Artist/Artist'
-import AlbumList from '../AlbumList/AlbumList'
 import Loader from '../Loader/Loader'
 import Banner from '../Banner/Banner'
-import Biography from '../Biography/Biography'
+import Routes from '../Routes/Routes'
 
 const API_KEY = '195003';
   
@@ -88,23 +86,8 @@ class App extends Component {
           <Loader />
         }
 
-        <Switch>
-          <Route exact path="/">
-            {artistData &&
-              <Artist artistData={artistData} />
-            }
-          </Route>
-          <Route
-            path={`/albums/:id`}
-            children={<AlbumList artistData={artistData}
-            albumData={albumData} />}
-          />
-          <Route
-            path={`/biography/:id`}
-            children={<Biography artistData={artistData}
-            albumData={albumData} />}
-          />
-        </Switch>
+        <Routes artistData={artistData} albumData={albumData} />
+
       </div>
     )
   }
