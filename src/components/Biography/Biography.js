@@ -8,7 +8,6 @@ function Biography(props) {
             {artistData.artists[0].strBiographyEN}
         </div>
     )
-
 }
 
 export default Biography

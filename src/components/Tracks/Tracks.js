@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 function Tracks(props) {
-    let { albumData, artistData } = props
+    let { albumData } = props
     let { idAlbum } = useParams()
 
     const [ tracks, setTracks ] = useState({ track: [] })
@@ -27,12 +27,14 @@ function Tracks(props) {
     return (
         <div>
             <div>
+                {/* map trought albumData, and checks if the album id is the same os the album id of url param, and render the album image of this album */}
                 {albumData.album.map(item => {
                     if (item.idAlbum === idAlbum) {
                       return <img key={item.idAlbum} src={item.strAlbumThumb} alt={item.strAlbum} />
                     }
                 })}
                 <ul>
+                    {/* map trought tracks api, and render a list of tracks */}
                     {tracks.track.map(item =>
                         <li key={item.idTrack}>{item.strTrack}</li>    
                     )}
