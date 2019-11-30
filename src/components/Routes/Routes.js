@@ -4,15 +4,19 @@ import { Route, Switch } from 'react-router-dom'
 import Artist from '../Artist/Artist'
 import AlbumList from '../AlbumList/AlbumList'
 import Biography from '../Biography/Biography'
-import Tracks from '../Tracks/Tracks' 
+import Tracks from '../Tracks/Tracks'
+import Home from '../Home/Home'
 
 function Routes(props) {
 
-    const { artistData, albumData } = props
+    const { artistData, albumData, loading } = props
 
     return (
         <Switch>
             <Route exact path="/">
+                {!artistData && !loading &&
+                    <Home />
+                }
                 {artistData &&
                     <Artist artistData={artistData} />
                 }

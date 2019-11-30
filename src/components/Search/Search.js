@@ -9,8 +9,9 @@ export default class Search extends Component {
 
         return (
             <div className="search">
+                <h1 className="search__title">discover about your favorite band or music artist</h1>
                 <form onSubmit={getInfo}>
-                    <input type="text" name="search" placeholder="search" value={search} onChange={onHandleChange} />
+                    <input type="text" name="search" placeholder="enter artist or band name" value={search} onChange={onHandleChange} />
                     <button className="submit-search" type="submit">
                         <i className="fa fa-search">Search</i>
                     </button>

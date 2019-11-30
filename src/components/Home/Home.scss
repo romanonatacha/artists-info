@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.home {
+    padding: $gutter * 4 0;
+    &__banner {
+        // background: white;
+        // width: 70%;
+        // padding: $gutter;
+        margin: 0 auto;
+        &__img {
+            width: 100%;
+        }
+    }
+}

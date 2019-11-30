@@ -86,7 +86,7 @@ class App extends Component {
           <Loader />
         }
 
-        <Routes artistData={artistData} albumData={albumData} />
+        <Routes artistData={artistData} albumData={albumData} loading={loading} />
 
       </div>
     )
