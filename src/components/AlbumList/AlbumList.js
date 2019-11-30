@@ -1,28 +1,20 @@
-import React, {Component}  from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
 
-function AlbumList() {
-    let { id } = useParams()
-
+function AlbumList(props) {
+    let { albumData } = props
+    
     return (
         <div>
-            {id}
+            <div>
+                <ul>
+                    {albumData.album.map(item =>
+                        <li key={item.idAlbum}>{item.strAlbum}</li>    
+                    )}
+                </ul>
+            </div>
         </div>
     )
 
 }
-
-// export default class AlbumList extends Component {
-//     render() {
-        
-//         let { id } = useParams()
-        
-//         return (
-//             <div>
-//                 {id}
-//             </div>
-//         )
-//     }
-// }
 
 export default AlbumList

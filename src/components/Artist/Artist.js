@@ -1,24 +1,19 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import './Artist.scss'
-import Loader from '../Loader/Loader'
+import Banner from '../Banner/Banner'
 
 export default class Artist extends Component {
     render() {
-        const { apiData, loading } = this.props
+        const { artistData } = this.props
+        const artistName = artistData.artists[0].strArtist
 
         return (
             <div className="artist">
-                {loading &&
-                    <Loader />
-                }
                 <div className="artist__banner">
-                    <img src={apiData.artists[0].strArtistBanner} alt={apiData.artists[0].strArtist} />
-                    <h3>{apiData.artists[0].strArtist}</h3>
-                    <Link to={`/${apiData.artists[0].strArtist}`}>CLIQUE AQUI</Link>
-                </div>
-                <div className="artist__bio">
-                    {apiData.artists[0].strBiographyEN}
+                    <h3>{artistName}</h3>
+                    <Link to={`/albums/${artistName}`}>Albums</Link>
+                    <Link to={`/biography/${artistName}`}>biography</Link>
                 </div>
             </div>
         )
