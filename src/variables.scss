@@ -5,6 +5,7 @@ $pink: #be0d5e;
 $green: #4f8e4b;
 $orange: #d57b00;
 $purple: #8d3aa2;
+$yellow: #e6ea31;
 
 // spacing
 $gutter: 8px;
@@ -14,7 +15,10 @@ $gutter: 8px;
   background: white;
   width: 70%;
   margin: 0 auto;
-  padding: $gutter * 4;
+  padding: $gutter * 2;
+  @include for-tablet-portrait-up {
+    padding: $gutter * 4;
+  }
 }
 
 @mixin grid-card($width) {
