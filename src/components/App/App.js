@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router-dom'
 import './App.scss'
-import Search from '../Search/Search'
 import Loader from '../Loader/Loader'
-import Banner from '../Banner/Banner'
 import Routes from '../Routes/Routes'
 
 const API_KEY = '195003';
@@ -29,7 +27,7 @@ class App extends Component {
     e.preventDefault()
 
     // redirect to home when submit form
-    this.props.history.push('/')
+    this.props.history.push('/query')
     
     this.setState({
       loading: true,
@@ -75,18 +73,21 @@ class App extends Component {
     const {loading, artistData, albumData, error, search } = this.state
 
     return (
-      <div className="App">
-        <Search getInfo={this.getInfo} error={error} search={search} onHandleChange={this.onHandleChange} />
-
-        {artistData && !error &&
-          <Banner image={artistData.artists[0].strArtistBanner} alt={artistData.artists[0].strArtist} />
-        }
+      <div className="app">
 
         {loading &&
           <Loader />
         }
 
-        <Routes artistData={artistData} albumData={albumData} loading={loading} />
+        <Routes
+          getInfo={this.getInfo}
+          onHandleChange={this.onHandleChange}
+          artistData={artistData}
+          albumData={albumData}
+          loading={loading}
+          error={error}
+          search={search}
+        />
 
       </div>
     )

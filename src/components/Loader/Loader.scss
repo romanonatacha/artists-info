@@ -5,11 +5,7 @@
     position: relative;
     width: 64px;
     height: 64px;
-    margin-top: 180px;
-
-    @include tablet-mobile {
-      margin: ($gutter * 2) 0;
-    }
+    margin-top: 40vh;
   }
   .lds-ripple div {
     position: absolute;

@@ -1,10 +1,17 @@
 // colors
-$background: #261a30;
+$main-dark: #242424;
 
 // spacing
 $gutter: 8px;
 
 //mixins
+@mixin white-box {
+  background: white;
+    width: 80%;
+    margin: 0 auto;
+    padding: $gutter;
+}
+
 @mixin mobile-only {
     @media (max-width: 400px) { @content; }
   }

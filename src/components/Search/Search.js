@@ -9,18 +9,21 @@ export default class Search extends Component {
 
         return (
             <div className="search">
-                <h1 className="search__title">discover about your favorite band or music artist</h1>
-                <form onSubmit={getInfo}>
+                <div className="box">
+                    <div className="container-2">
+                    <form onSubmit={getInfo}>
+                        <button className="icon search__button" type="submit"><i className="fa fa-search"></i></button>
+                        <input type="text" id="search" name="search" placeholder="enter artist or band name" value={search} onChange={onHandleChange} />
+                        </form>
+
+                    </div>
+                </div>
+                {/* <form onSubmit={getInfo}>
                     <input type="text" name="search" placeholder="enter artist or band name" value={search} onChange={onHandleChange} />
                     <button className="submit-search" type="submit">
                         <i className="fa fa-search">Search</i>
                     </button>
-                </form>
-                {error &&
-                    <div>
-                        {error}
-                    </div>
-                }
+                </form> */}
             </div>
         )
     }

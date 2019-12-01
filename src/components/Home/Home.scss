@@ -1,14 +1,29 @@
 @import '../../variables.scss';
 
 .home {
-    padding: $gutter * 4 0;
+
     &__banner {
-        // background: white;
-        // width: 70%;
-        // padding: $gutter;
-        margin: 0 auto;
-        &__img {
-            width: 100%;
+        background: url('../../images/music.jpg') no-repeat center;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+
+        &__search-box {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin-left: -21rem;
+            margin-top: -3.5rem;
+            width: 50%;
+            height: 22rem;
+            background: #00000073;
+
+            &__title {
+                text-align: left;
+                font-size: 54px;
+                color: white;
+            }
         }
+
     }
 }

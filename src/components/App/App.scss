@@ -1,5 +1,18 @@
-.App {
+@import '../../variables.scss';
+
+.app {
   text-align: center;
+
+  &__search {
+    padding-top: $gutter * 3;
+    margin: 0 auto;
+    width: 55%;
+    display: inline-block;
+
+    .box .container-2 input#search{
+      width: 300px;
+      }
+  }
 }
 
 .App-logo {
