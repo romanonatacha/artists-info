@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './Home.scss'
-import image from '../../images/music.jpg'
 import Search from '../Search/Search'
 
 export default class Home extends Component {

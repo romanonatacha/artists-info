@@ -6,7 +6,6 @@ import AlbumList from '../AlbumList/AlbumList'
 import Biography from '../Biography/Biography'
 import Tracks from '../Tracks/Tracks'
 import Home from '../Home/Home'
-import Search from '../Search/Search'
 import Banner from '../Banner/Banner'
 import Header from '../Header/Header'
 
