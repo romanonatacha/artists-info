@@ -1,5 +1,10 @@
 // colors
 $main-dark: #242424;
+$blue: #307886;
+$pink: #be0d5e;
+$green: #4f8e4b;
+$orange: #d57b00;
+$purple: #8d3aa2;
 
 // spacing
 $gutter: 8px;
@@ -7,9 +12,34 @@ $gutter: 8px;
 //mixins
 @mixin white-box {
   background: white;
-    width: 80%;
-    margin: 0 auto;
-    padding: $gutter;
+  width: 70%;
+  margin: 0 auto;
+  padding: $gutter * 4;
+}
+
+@mixin grid-card($width) {
+  display: inline-block;
+  width: $width;
+  padding: $gutter;
+}
+
+@mixin content-grid-card($color) {
+  width: 100%;
+  height: 100px;
+  background-color: $color;
+  position: relative;
+
+  @include for-tablet-portrait-up {
+    height: 220px;
+  }
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) 
 }
 
 @mixin mobile-only {

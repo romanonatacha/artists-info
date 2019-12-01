@@ -2,4 +2,89 @@
 
 .artist {
     @include white-box;
+
+    &__info {
+        width: 100%;
+
+        &__card {
+            
+            @include for-tablet-portrait-up {
+                @include grid-card(33%);
+            }
+
+            &__item {
+
+                &.country {
+                    @include content-grid-card($blue);
+                }
+
+                &.genre {
+                    @include content-grid-card($pink);
+
+                }
+
+                &.year {
+                    @include content-grid-card($green);
+                }
+
+                p {
+                    @include vertical-center;
+                    color: white;
+
+                    span {
+                        margin-top: $gutter;
+                        display: block;
+                        font-weight: bold;
+                        font-size: 14px;
+                        @include for-tablet-portrait-up {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    &__more {
+        width: 100%;
+
+        &__card {
+
+            @include for-tablet-portrait-up {
+                @include grid-card(50%);
+            }
+
+            &__item {
+
+                &.album {
+                    @include content-grid-card($orange);
+
+                    &:hover {
+                        background-color: darken($orange, 10%);
+                      }
+                }
+
+                &.bio  {
+                    @include content-grid-card($purple);
+                    &:hover {
+                        background-color: darken($purple, 10%);
+                      }
+                }
+
+                p {
+                    @include vertical-center;
+                    color: white;
+                    span {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: 20px;
+                        @include for-tablet-portrait-up {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

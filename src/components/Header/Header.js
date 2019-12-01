@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import './Header.scss'
 import { Link } from 'react-router-dom'
 import Search from '../Search/Search'
 

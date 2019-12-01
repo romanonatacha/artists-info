@@ -2,4 +2,11 @@
 
 .banner {
     padding-top: $gutter * 4;
+
+    img {
+        width: 100%;
+        @include for-tablet-portrait-up {
+            width: 60%;
+        }
+    }
 }

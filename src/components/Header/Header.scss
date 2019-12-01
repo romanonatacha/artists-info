@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.back-btn {
+    @include for-tablet-portrait-up {
+        display: inline-block;
+        width: 30%;
+        text-align: left;
+    }
+  
+    a {
+      color: white;
+      text-decoration: none;
+  
+      &:hover {
+        color: darken(white, 30%);
+      }
+  
+      .icon {
+        font-size: 24px;
+        margin-bottom: $gutter;
+      }
+    }
+  
+  }

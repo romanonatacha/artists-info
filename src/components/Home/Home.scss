@@ -11,17 +11,27 @@
         &__search-box {
             position: absolute;
             top: 30%;
-            left: 50%;
-            margin-left: -21rem;
             margin-top: -3.5rem;
-            width: 50%;
-            height: 22rem;
+            height: auto;
             background: #00000073;
+            width: 70%;
+            margin-left: -33%;
+            left: 50%;
+            padding-bottom: $gutter * 4;
+
+            @include for-tablet-portrait-up {
+                width: 50%;                
+                margin-left: -24%;
+
+            }
 
             &__title {
                 text-align: left;
-                font-size: 54px;
                 color: white;
+                font-size: 30px;
+                @include for-tablet-portrait-up {
+                    font-size: 54px;
+                }
             }
         }
 

@@ -1,8 +1,6 @@
 @import '../../variables.scss';
 
 .search {
-    
-    
 
     &__button {
         background: transparent;
@@ -12,7 +10,6 @@
   
 // input animation
 .box{
-    // margin: 100px auto;
     width: 300px;
     height: auto;
   }
@@ -25,24 +22,30 @@
   }
   
   .container-2 input#search{
-    width: 0;
     height: 50px;
     background: #ffffffc7;
     border: none;
-    font-size: 16pt;
+    font-size: 10pt;
     float: left;
     color: #262626;
-    padding-left: 60px;
+    padding-left: 50px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     color: $main-dark;
+    width: 75%;
    
     -webkit-transition: width .55s ease;
     -moz-transition: width .55s ease;
     -ms-transition: width .55s ease;
     -o-transition: width .55s ease;
     transition: width .55s ease;
+
+    @include for-tablet-portrait-up {
+        width: 0;
+        font-size: 14pt;
+        padding-left: 60px;
+    }
   }
   
   .container-2 input#search::-webkit-input-placeholder {
@@ -69,16 +72,23 @@
     margin-top: $gutter;
     z-index: 1;
     color: #4f5b66;
-    font-size: 30px;
+    font-size: 24px;
+
+    @include for-tablet-portrait-up {
+        font-size: 30px;
+        margin-top: 6px;
+    }
   }
   
   .container-2 input#search:focus, .container-2 input#search:active{
     outline:none;
     width: 300px;
   }
-   
-  .container-2:hover input#search{
-    width: 300px;
+
+  @include for-tablet-portrait-up {
+      .container-2:hover input#search{
+        width: 300px;
+      }
   }
    
   .container-2:hover .icon{
