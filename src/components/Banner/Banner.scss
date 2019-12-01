@@ -5,6 +5,8 @@
 
     img {
         width: 100%;
+        border: $gutter solid white;
+        margin-bottom: $gutter;
         @include for-tablet-portrait-up {
             width: 60%;
         }

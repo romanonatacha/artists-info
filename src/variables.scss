@@ -6,6 +6,7 @@ $green: #4f8e4b;
 $orange: #d57b00;
 $purple: #8d3aa2;
 $yellow: #e6ea31;
+$lightGreen: #5bd19f;
 
 // spacing
 $gutter: 8px;
@@ -13,11 +14,12 @@ $gutter: 8px;
 //mixins
 @mixin white-box {
   background: white;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   padding: $gutter * 2;
   @include for-tablet-portrait-up {
     padding: $gutter * 4;
+    width: 70%;
   }
 }
 

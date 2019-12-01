@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.bio {
+    @include white-box;
+
+    &__title {
+        width: 90%;
+        margin: 0 auto;
+        background: $lightGreen;
+        padding: ($gutter * 2) ($gutter);
+        color: $main-dark;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include for-tablet-portrait-up {
+            width: 70%;
+        }
+    }
+
+    &__text {
+        width: 90%;
+        margin: 0 auto;
+        line-height: 26px;
+        text-align: justify;
+        padding: $gutter * 2 0;
+        @include for-tablet-portrait-up {
+            width: 70%;
+        }
+    }
+}

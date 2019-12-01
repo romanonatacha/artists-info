@@ -15,7 +15,7 @@ function AlbumList(props) {
             <div className="albumlist">
                 <div className="albumlist__content">
                     <ul className="albumlist__content__list">
-                        <li className="albumlist__content__list__item title">
+                        <li key="title" className="albumlist__content__list__item title">
                             <span>Album</span>
                             <span>Year</span>  
                         </li>
