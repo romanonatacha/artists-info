@@ -3,13 +3,14 @@ import { withRouter } from 'react-router-dom'
 import './App.scss'
 import Loader from '../Loader/Loader'
 import Routes from '../Routes/Routes'
+import Footer from '../Footer/Footer'
 
 const API_KEY = '195003';
   
 class App extends Component {
 
   state = {
-    error: undefined,
+    error: false,
     loading: false,
     artistData: undefined,
     albumData: undefined,
@@ -31,7 +32,7 @@ class App extends Component {
     
     this.setState({
       loading: true,
-      error: undefined,
+      error: false,
       artistData: undefined,
       albumData: undefined,
       search: e.target.elements.search.value
@@ -53,7 +54,7 @@ class App extends Component {
       this.setState({
         artistData: undefined,
         albumData: undefined,
-        error: 'The artist was not found.',
+        error: true,
         loading: false,
         search: ''
       })
@@ -61,7 +62,7 @@ class App extends Component {
       this.setState({
         artistData: artistData,
         albumData: albumData,
-        error: undefined,
+        error: false,
         loading: false,
         search: ''
       })
@@ -88,7 +89,7 @@ class App extends Component {
           error={error}
           search={search}
         />
-
+      <Footer />
       </div>
     )
   }

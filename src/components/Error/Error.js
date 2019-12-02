@@ -3,11 +3,11 @@ import './Error.scss'
 
 export default class Error extends Component {
     render() {
-        const { error } = this.props
+        const { error, className } = this.props
 
         return (
             <div className="error">
-                <i className="error__icon fa fa-exclamation-circle"></i>
+                <i className={className}></i>
                 <p className="error__text">
                     {error}
                 </p>

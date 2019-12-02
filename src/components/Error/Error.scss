@@ -1,13 +1,18 @@
 @import '../../variables.scss';
 
 .error {
-    padding: ($gutter * 8) ($gutter * 2);
-    &__icon{
+    padding: ($gutter * 16) ($gutter * 2);
+    height: 75vh;
+    &__red-icon{
       font-size: 64px;
       color: $red;
     }
+    &__yellow-icon {
+      font-size: 64px;
+      color: $yellow;
+    }
     &__text {
         color: white;
-        font-size: 24px;;
+        font-size: 22px;;
     }
 }

@@ -77,8 +77,11 @@ export default class Artist extends Component {
                         </div>
                     </div>
                 }
+                {!artistData && !error &&
+                    <Error className="error__yellow-icon fa fa-exclamation-triangle" error='Oops, something is wrong! Please try again or come back later.' />
+                }
                 {error &&
-                    <Error error={error} />
+                    <Error className="error__red-icon fa fa-exclamation-circle" error='The artist was not found.' />
                 }
             </Fragment>
         )
