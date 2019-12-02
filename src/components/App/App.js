@@ -17,6 +17,7 @@ class App extends Component {
     search: ''
   }
 
+  // handle the input value
   onHandleChange = (e) => {
     this.setState({
       search: e.target.value
