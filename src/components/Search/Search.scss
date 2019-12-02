@@ -79,6 +79,7 @@
   
   .container-2 input#search:focus, .container-2 input#search:active{
     outline:none;
+    width: 300px;
   }
 
   @include for-tablet-portrait-up {
