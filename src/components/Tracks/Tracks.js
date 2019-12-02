@@ -12,7 +12,7 @@ function Tracks(props) {
     const [ tracks, setTracks ] = useState({ track: [] })
     const [ loading, setLoading ] = useState(true)
 
-    const API_KEY = '195003';
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     // fetching tracks data using the album id
     useEffect(() => {

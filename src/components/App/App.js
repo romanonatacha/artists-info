@@ -5,7 +5,7 @@ import Loader from '../Loader/Loader'
 import Routes from '../Routes/Routes'
 import Footer from '../Footer/Footer'
 
-const API_KEY = '195003';
+const API_KEY = process.env.REACT_APP_API_KEY;
   
 class App extends Component {
 
