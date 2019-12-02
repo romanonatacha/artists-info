@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import './Artist.scss'
 
+import Error from '../Error/Error'
+
 export default class Artist extends Component {
     render() {
         const { artistData, error } = this.props
@@ -76,7 +78,7 @@ export default class Artist extends Component {
                     </div>
                 }
                 {error &&
-                    <div>{error}</div>
+                    <Error error={error} />
                 }
             </Fragment>
         )

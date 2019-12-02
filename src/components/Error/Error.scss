@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.error {
+    padding: ($gutter * 8) ($gutter * 2);
+    &__icon{
+      font-size: 64px;
+      color: $red;
+    }
+    &__text {
+        color: white;
+        font-size: 24px;;
+    }
+}
