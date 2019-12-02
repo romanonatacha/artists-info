@@ -7,7 +7,7 @@ export default class Error extends Component {
 
         return (
             <div className="error">
-                <i class="error__icon fa fa-exclamation-circle"></i>
+                <i className="error__icon fa fa-exclamation-circle"></i>
                 <p className="error__text">
                     {error}
                 </p>

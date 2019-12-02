@@ -30,7 +30,7 @@ function Routes(props) {
                     <Fragment>
                         <Header getInfo={getInfo} error={error} search={search} onHandleChange={onHandleChange} />
                         {artistData &&
-                            <Banner artistData={artistData} image={artistData.artists[0].strArtistBanner} alt={artistData.artists[0].strArtist} />
+                            <Banner artistData={artistData} image={`${artistData.artists[0].strArtistBanner}/preview`} alt={artistData.artists[0].strArtist} />
                         }
                         
                         <Artist artistData={artistData} error={error}/>

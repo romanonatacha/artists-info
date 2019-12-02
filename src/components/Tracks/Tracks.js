@@ -34,7 +34,7 @@ function Tracks(props) {
     return (
         <Fragment>
             <Header getInfo={getInfo} error={error} search={search} onHandleChange={onHandleChange} />
-            <Banner  artistData={artistData} image={artistData.artists[0].strArtistBanner} alt={artistData.artists[0].strArtist} />
+            <Banner  artistData={artistData} image={`${artistData.artists[0].strArtistBanner}/preview`} alt={artistData.artists[0].strArtist} />
             {loading &&
                 <Loader />
             }
@@ -48,7 +48,7 @@ function Tracks(props) {
                                     return (
                                         <Fragment>
                                             <h3 className="tracks__content__image__title">{item.strAlbum}</h3>
-                                            <img key={item.idAlbum} src={item.strAlbumThumb} alt={item.strAlbum} />
+                                            <img key={item.idAlbum} src={`${item.strAlbumThumb}/preview`} alt={item.strAlbum} />
                                         </Fragment>
                                     )
                                 }

@@ -11,7 +11,7 @@ function AlbumList(props) {
     return (
         <Fragment>
             <Header getInfo={getInfo} error={error} search={search} onHandleChange={onHandleChange} />
-            <Banner  artistData={artistData} image={artistData.artists[0].strArtistBanner} alt={artistData.artists[0].strArtist} />
+            <Banner  artistData={artistData} image={`${artistData.artists[0].strArtistBanner}/preview`} alt={artistData.artists[0].strArtist} />
             <div className="albumlist">
                 <div className="albumlist__content">
                     <ul className="albumlist__content__list">
